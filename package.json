@@ -1,0 +1,34 @@
+{
+  "name": "camelattitude",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@directus/sdk": "^9.5.2",
+    "@hookform/resolvers": "^2.8.8",
+    "axios": "^0.26.0",
+    "framer-motion": "^6.2.6",
+    "html-react-parser": "^1.4.8",
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-form": "^4.0.1",
+    "react-form-input-validation": "^2.0.5",
+    "react-google-recaptcha": "^2.1.0",
+    "react-google-recaptcha-v3": "^1.9.7",
+    "react-hook-form": "^7.27.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.1.0",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.23"
+  }
+}
