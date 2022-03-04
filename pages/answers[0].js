@@ -29,7 +29,7 @@ export default function Orange() {
     const [loaded, setLoaded] = useState(false);
     const getApiData = async () => {
         
-    const ansObj = await getById('questions',query.answers_id);
+    const ansObj = await getById('questions',query.page_id);
     setPageansObj(ansObj);
     setLoaded(true);
 }

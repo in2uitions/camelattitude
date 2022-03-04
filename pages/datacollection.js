@@ -15,6 +15,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Router, useRouter } from 'next/router'
+import { createsmoker } from '../api/server'
 
 export default function Home() {
     const router = useRouter()
@@ -35,8 +36,10 @@ export default function Home() {
     const onSubmitForm = async (value) => {
         try {
             const result = await validationSchema.validate(value)
-            if (result)
+            if (result){
+               const user =  await createsmoker(result)
                 router.push({ pathname: '/chooseOne' });
+            }
             // alert(JSON.stringify(result));
         } catch (e) { }
         // router.push({ pathname: '/chooseOne' }); 

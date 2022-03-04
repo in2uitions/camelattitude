@@ -36,6 +36,22 @@ export const getById = async(collection,id) =>{
     return annoncesPublished.data;
 }
 
+
+export const createsmoker = async(data) =>{
+    const smokers = directus.items("smokers");
+    const annoncesPublished = await smokers.createOne({
+      name:data.nom,
+      age:data.tel,
+      gender:true,
+      email:data.emailaddress,
+      is_smoker:false,
+      phone:data.tel
+    });
+    return annoncesPublished.data;
+}
+
+
+
 export const getQuestions = async() =>{ 
     const comp_questions = directus.items('questions');
     const comp_questionsPublished = await comp_questions.readMany({
