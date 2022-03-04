@@ -29,7 +29,7 @@ export const getById = async(collection,id) =>{
                 _eq: 'published',
             },
             id:{
-                _eq: id??7
+                _eq: id??1
             }
         },
     });
