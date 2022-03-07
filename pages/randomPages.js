@@ -18,8 +18,8 @@ import { getAllRecords } from '/api/server'
 
 export default function PageFive() {
     const { query } = useRouter()
-    console.log('zIddddd in randomPages')
-    console.log(localStorage.getItem('zId'))
+    // console.log('zIddddd in randomPages')
+    // console.log(localStorage.getItem('zId'))
     useEffect(() => {
         getApiData();
     }, []);

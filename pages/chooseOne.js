@@ -16,8 +16,8 @@ import { getAllRecords } from '/api/server'
 
 export default function ChooseOne() {
     const { query } = useRouter()
-    console.log('zIddddd in ChooseOne')
-    console.log(localStorage.getItem('zId'))
+    // console.log('zIddddd in ChooseOne')
+    // console.log(localStorage.getItem('zId'))
     const router = useRouter()
     const getRandomInt = (max) => {
         console.log('zIddddd')

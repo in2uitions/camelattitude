@@ -19,18 +19,19 @@ import { createsmoker } from '../api/server'
 
 export default function Orange() {
     const { query } = useRouter()
-    console.log('---------------------------------')
-    console.log('zIddddd in AnsZero')
-    console.log(localStorage.getItem('zId'))
-    console.log('zQst')
-    console.log(localStorage.getItem('zQst'))
-    console.log('zAns')
-    console.log(localStorage.getItem('zAns'))
 
-    console.log('---------------------------------')
     useEffect(() => {
         getApiData();
         getData();
+        console.log('---------------------------------')
+        console.log('zIddddd in AnsZero')
+        console.log(localStorage.getItem('zId'))
+        console.log('zQst')
+        console.log(localStorage.getItem('zQst'))
+        console.log('zAns')
+        console.log(localStorage.getItem('zAns'))
+    
+        console.log('---------------------------------')
 
     }, []);
     const [nouvelleAnsObj, setPageAns2Obj] = useState([]);
