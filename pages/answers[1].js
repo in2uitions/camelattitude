@@ -45,6 +45,8 @@ export default function Orange() {
     setPageAns2Obj(ans2Obj);
     setLoaded(true);
     console.log('UpdateStart');
+    // localStorage.setItem('zCol', item.background_color);
+    // localStorage.setItem('zAtt', item.answers[1].attitude);
     createsmoker();
     console.log('UpdateEnd');
 }

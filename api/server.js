@@ -48,6 +48,8 @@ export const createsmoker = async (data) => {
     var zEmailToUse = localStorage.getItem('zEmail');
     var zIsSmokerToUse = localStorage.getItem('zIsSmoker');
     var zPhoneToUse = localStorage.getItem('zPhone'); 
+    var zColToUse = localStorage.getItem('zCol');
+    var zAttToUse = localStorage.getItem('zAtt');
 console.log(zIsSmokerToUse);
 console.log(zGenderToUse);
     const annoncesPublished = await smokers.createOne({
@@ -58,7 +60,9 @@ console.log(zGenderToUse);
         is_smoker: zIsSmokerToUse,
         phone: zPhoneToUse,
         selected_question: zQstToUse,
-        selected_answer: zAnsToUse
+        selected_answer: zAnsToUse,
+        selected_color: zColToUse,
+        selected_attitude: zAttToUse
     });
 console.log(annoncesPublished.id)
 localStorage.setItem('zId', annoncesPublished.id)
