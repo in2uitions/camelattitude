@@ -20,29 +20,42 @@ import { createsmoker } from '../api/server'
 export default function Home() {
     const router = useRouter()
     const validationSchema = Yup.object().shape({
-        nom: Yup.string()
+        name: Yup.string()
             .required('Nom is required'),
-        tel: Yup.string()
+        phone: Yup.string()
             .required('Tel is required'),
-        emailaddress: Yup.string()
+        email: Yup.string()
             .required('Email is required')
             .email('Email is invalid'),
         age: Yup.string().required('must be 18 years old'),
-        jesuis: Yup.array().min(1, "one must be selected").nullable(),
+        is_smoker: Yup.array().min(1, "one must be selected").nullable(),
+        is_gnd: Yup.array().min(1, "one must be selected").nullable(),
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
     const { register, handleSubmit, formState: { errors }, reset } = useForm(formOptions);
 
     const onSubmitForm = async (value) => {
         try {
+            // console.log(value)
             const result = await validationSchema.validate(value)
-            if (result){
-               const user =  await createsmoker(result)
-                router.push({ pathname: '/chooseOne' });
+            if (result) {
+                const cameluser=1;// = await createsmoker(value)
+localStorage.setItem('zName', value.name);
+localStorage.setItem('zAge', value.age);
+localStorage.setItem('zGender', value.is_gnd);
+localStorage.setItem('zEmail', value.email);
+localStorage.setItem('zIsSmoker', value.is_smoker);
+localStorage.setItem('zPhone', value.phone);
+
+                // console.log(JSON.stringify(cameluser))
+               router.push({ pathname: '/chooseOne', query: { cameluser: cameluser }});
             }
             // alert(JSON.stringify(result));
-        } catch (e) { }
+        } catch (e) { 
+            console.log(e)
+         }
         // router.push({ pathname: '/chooseOne' }); 
+
     }
 
 
@@ -82,8 +95,8 @@ export default function Home() {
                                         <div className="mt-10 text-white container mx-auto">
                                             <div className="flex-items">
                                                 <label className="label-text">Nom</label>
-                                                <input className='input-text' type="text" {...register('nom', { required: { value: true, message: "Nom is required" } })} />
-                                                <span className="text-red-400 text-sm">{errors?.nom?.message}</span>
+                                                <input className='input-text' type="text" {...register('name', { required: { value: true, message: "Nom is required" } })} />
+                                                <span className="text-red-400 text-sm">{errors?.name?.message}</span>
                                             </div>
                                             <div className="mt-10">
                                                 <div className="flex-items">
@@ -99,29 +112,29 @@ export default function Home() {
                                                 <div className="flex-radioitems ml-10">
                                                     <label className="label-text ">sexe</label>
                                                     <form class="boxed">
-                                                        <input {...register('jesuis')} type="radio" id="android" name="skills" value="F" />
+                                                        <input {...register('is_gnd')} type="radio" id="android" name="skills" value="F" />
                                                         <label className='radio-label' for="android">F</label>
 
-                                                        <input  {...register('jesuis')} type="radio" id="ios" name="skills" value="H" />
+                                                        <input  {...register('is_gnd')} type="radio" id="ios" name="skills" value="H" />
                                                         <label className='radio-label' for="ios">H</label>
                                                     </form>
                                                 </div>
-                                                <div><span className="text-red-400 text-sm">{errors?.jesuis?.message}</span></div>
+                                                <div><span className="text-red-400 text-sm">{errors?.is_smoker?.message}</span></div>
                                             </div>
                                             <div className="mt-10 ml-10">
                                                 <div className="flex-radioitems">
                                                     <label className="label-text ">Addresse Electronique</label>
-                                                    <input className='input-text' type="text" {...register('emailaddress', {
+                                                    <input className='input-text' type="text" {...register('email', {
                                                         required: { value: true, message: "Email is required" },
                                                         pattern: { value: "^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$", message: "Invalid emailaddress format" }
                                                     })} />
-                                                    <span className="text-red-400 text-sm">{errors?.emailaddress?.message}</span></div>
+                                                    <span className="text-red-400 text-sm">{errors?.email?.message}</span></div>
                                             </div>
                                             <div className="mt-10 ml-10">
                                                 <div className="flex-radioitems">
                                                     <label className="label-text ">Numero de tel</label>
-                                                    <input className='input-text' type="text" {...register('tel', { required: { value: true, message: "Numéro de portable is required" } })} />
-                                                    <span className="text-red-400 text-sm">{errors?.tel?.message}</span></div>
+                                                    <input className='input-text' type="text" {...register('phone', { required: { value: true, message: "Numéro de portable is required" } })} />
+                                                    <span className="text-red-400 text-sm">{errors?.phone?.message}</span></div>
                                             </div>
 
                                             <div className="mt-10">
@@ -130,13 +143,13 @@ export default function Home() {
                                                     <div className='radio-flex-2'>
                                                         <label class="">
                                                             <div className='flex-scd'>
-                                                                <input className='checkmark' {...register('jesuis')} id="parents" type="radio" name='radio' value="oui" />
+                                                                <input className='checkmark' {...register('is_smoker')} id="parents" type="radio" name='radio' value="oui" />
                                                                 <label className="yes">oui</label>
                                                             </div>
                                                         </label>
                                                         <label class="">
                                                             <div className='flex-scd'>
-                                                                <input className='checkmark' {...register('jesuis')} id="parents" type="radio" name='radio' value="non" />
+                                                                <input className='checkmark' {...register('is_smoker')} id="parents" type="radio" name='radio' value="non" />
                                                                 <label className='yes'>non</label>
                                                             </div>
                                                         </label>

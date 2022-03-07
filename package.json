@@ -11,7 +11,9 @@
   "dependencies": {
     "@directus/sdk": "^9.5.2",
     "@hookform/resolvers": "^2.8.8",
+    "@mui/material": "^5.4.4",
     "axios": "^0.26.0",
+    "formik-effect": "^1.2.0",
     "framer-motion": "^6.2.6",
     "html-react-parser": "^1.4.8",
     "next": "12.1.0",

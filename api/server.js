@@ -9,7 +9,7 @@ const directus = new Directus(URL);
 //     return res.data;
 // }
 
-export const getAllRecords = async(collection) =>{
+export const getAllRecords = async (collection) => {
     const annonces = directus.items(collection);
     const annoncesPublished = await annonces.readByQuery({
         filter: {
@@ -20,7 +20,7 @@ export const getAllRecords = async(collection) =>{
     });
     return annoncesPublished.data;
 }
-export const getById = async(collection,id) =>{
+export const getById = async (collection, id) => {
     console.log(id);
     const annonces = directus.items(collection);
     const annoncesPublished = await annonces.readByQuery({
@@ -28,8 +28,8 @@ export const getById = async(collection,id) =>{
             status: {
                 _eq: 'published',
             },
-            id:{
-                _eq: id??1
+            id: {
+                _eq: id ?? 1
             }
         },
     });
@@ -37,22 +37,53 @@ export const getById = async(collection,id) =>{
 }
 
 
-export const createsmoker = async(data) =>{
+export const createsmoker = async (data) => {
     const smokers = directus.items("smokers");
+   // var zIdToUse = localStorage.getItem('zId');
+    var zQstToUse = localStorage.getItem('zQst');
+    var zAnsToUse = localStorage.getItem('zAns');
+    var zNameToUse = localStorage.getItem('zName');
+    var zAgeToUse = localStorage.getItem('zAge');
+    var zGenderToUse = localStorage.getItem('zGender');
+    var zEmailToUse = localStorage.getItem('zEmail');
+    var zIsSmokerToUse = localStorage.getItem('zIsSmoker');
+    var zPhoneToUse = localStorage.getItem('zPhone'); 
+console.log(zIsSmokerToUse);
+console.log(zGenderToUse);
     const annoncesPublished = await smokers.createOne({
-      name:data.nom,
-      age:data.tel,
-      gender:true,
-      email:data.emailaddress,
-      is_smoker:false,
-      phone:data.tel
+        name: zNameToUse,
+        age: zAgeToUse,
+        gender: zGenderToUse,
+        email: zEmailToUse,
+        is_smoker: zIsSmokerToUse,
+        phone: zPhoneToUse,
+        selected_question: zQstToUse,
+        selected_answer: zAnsToUse
     });
-    return annoncesPublished.data;
+console.log(annoncesPublished.id)
+localStorage.setItem('zId', annoncesPublished.id)
+console.log(localStorage.getItem('zId'))
+    return annoncesPublished;
+    
+}
+
+export const updatesmoker = async (data) => {
+    const smokers = directus.items("smokers");
+    var zIdToUse = localStorage.getItem('zId');
+    var zQstToUse = localStorage.getItem('zQst').toString;
+    var zAnsToUse = localStorage.getItem('zAns').toString;
+    const annoncesPublished = await smokers.updateOne(
+        { 
+        id: zIdToUse},
+        {
+            selected_question: zQstToUse,
+            selected_answer: zAnsToUse,
+    });
+    return 'DONE';
 }
 
 
-
-export const getQuestions = async() =>{ 
+export const getQuestions = async () => {
     const comp_questions = directus.items('questions');
     const comp_questionsPublished = await comp_questions.readMany({
         filter: {
@@ -60,11 +91,11 @@ export const getQuestions = async() =>{
                 _eq: 'published',
             },
         },
-        fields:['*,*.*']
+        fields: ['*,*.*']
     });
-    
-    
+
+
     console.log(comp_questionsPublished.data);
-    
+
     return comp_questionsPublished.data;
 }

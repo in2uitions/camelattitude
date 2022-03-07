@@ -159,6 +159,10 @@ input[type='radio']:checked {
   display: flex;
   flex-direction: row;
 }
+.quest{
+  font-family: camelbold;
+    font-size: 2.5rem;
+}
 .flex-none {
   background: white;
   box-shadow: 0 0 15px rgb(0 0 0 / 0.2);

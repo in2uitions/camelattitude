@@ -15,12 +15,25 @@ import Link from 'next/link';
 import { useState, useEffect } from "react";
 import { getById } from '/api/server'
 import { image_url } from '../global'
+import { createsmoker } from '../api/server'
 
 export default function Orange() {
     const { query } = useRouter()
+    console.log('---------------------------------')
+    console.log('zIddddd in AnsZero')
+    console.log(localStorage.getItem('zId'))
+    console.log('zQst')
+    console.log(localStorage.getItem('zQst'))
+    console.log('zAns')
+    console.log(localStorage.getItem('zAns'))
+
+    console.log('---------------------------------')
     useEffect(() => {
+
         getApiData();
         getData();
+
+
     }, []);
     const [nouvelleansObj, setPageansObj] = useState([]);
     const [questHomeObj, setPageQuestObj] = useState([]);
@@ -32,6 +45,9 @@ export default function Orange() {
     const ansObj = await getById('questions',query.page_id);
     setPageansObj(ansObj);
     setLoaded(true);
+    console.log('UpdateStart');
+    createsmoker();
+    console.log('UpdateEnd');
 }
 const getData = async () => {
 const questObj = await getById('lighter',query.page_id);

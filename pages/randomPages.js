@@ -18,6 +18,8 @@ import { getAllRecords } from '/api/server'
 
 export default function PageFive() {
     const { query } = useRouter()
+    console.log('zIddddd in randomPages')
+    console.log(localStorage.getItem('zId'))
     useEffect(() => {
         getApiData();
     }, []);
@@ -77,14 +79,31 @@ export default function PageFive() {
         return Math.floor(Math.random() * max);
     }
 
-    const randomans = async () => {
-        const quest2Obj = await getAllRecords('lighter');
+    // const randomans = async () => {
+    //     const quest2Obj = await getAllRecords('lighter');
+    //     var questscd = getRandomANS(quest2Obj.length);
+    //     for (let i = 0; i < quest2Obj.length; i++) {
+    //         if (i == questscd) {
+    //             fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
+    //         }
+    //     }
+    // }
+    const randomans = async (value) => {
+        try {
+            const quest2Obj = await getAllRecords('lighter');
         var questscd = getRandomANS(quest2Obj.length);
-        for (let i = 0; i < quest2Obj.length; i++) {
-            if (i == questscd) {
-                fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
+            const result = await validationSchema.validate(value)
+            if (result) {
+               // const user = await createanswer(result)
+                for (let i = 0; i < quest2Obj.length; i++) {
+                    if (i == questscd) {
+                        fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
+                    }
+                }
             }
-        }
+            // alert(JSON.stringify(result));
+        } catch (e) { }
+        // router.push({ pathname: '/chooseOne' }); 
     }
     return (
         <div className="flex flex-col h-screen">
@@ -108,19 +127,17 @@ export default function PageFive() {
 
                                     <>
                                         <div className="absolute grid place-content-center w-screen height-screen" key={item.id}>
-                                            <h2 className=" text-6xl">{parse(`${item.questions}`)}</h2>
+                                            <h2 className="quest text-6xl">{parse(`${item.questions}`)}</h2>
                                             {/* <h2 className=" text-6xl">{item.id}</h2> */}
                                             <div className=" flex flex-row  w-screen">
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { randomB(); random() }}>
+                                                    <div onClick={() => { randomB(); randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer) }}>
                                                         <h3 className=" place absolument echecs text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[0].answer}</h3>
-
-
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="icon" />
                                                 </div>
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { rand(); randomans() }}>
+                                                    <div onClick={() => { rand(); randomans(); localStorage.setItem('zQst',  item.id); localStorage.setItem('zAns', item.answers[1].answer) }}>
                                                         <h3 className="place mettre absolument text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[1].answer}</h3>
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="icon-f" />
