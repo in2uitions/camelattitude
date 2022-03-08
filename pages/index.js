@@ -72,7 +72,7 @@ export default function Home() {
               </div>
               <div className="basis-1/2 flex flex-wrap content-end">
                 {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
-                <a href='datacollection'>
+                <a href='smoker'>
                   <img src="assets/images/lets-camel.svg" className="absolute h-1/6 right-20 bottom-10" />
                 </a>
 

@@ -28,32 +28,31 @@ export default function Home() {
             .required('Email is required')
             .email('Email is invalid'),
         age: Yup.string().required('must be 18 years old'),
-        is_smoker: Yup.array().min(1, "one must be selected").nullable(),
-        is_gnd: Yup.array().min(1, "one must be selected").nullable(),
+        
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
     const { register, handleSubmit, formState: { errors }, reset } = useForm(formOptions);
 
     const onSubmitForm = async (value) => {
         try {
-            // console.log(value)
+            // //console.log(value)
             const result = await validationSchema.validate(value)
             if (result) {
-                const cameluser=1;// = await createsmoker(value)
-localStorage.setItem('zName', value.name);
-localStorage.setItem('zAge', value.age);
-localStorage.setItem('zGender', value.is_gnd);
-localStorage.setItem('zEmail', value.email);
-localStorage.setItem('zIsSmoker', value.is_smoker);
-localStorage.setItem('zPhone', value.phone);
+                const cameluser = 1;// = await createsmoker(value)
+                localStorage.setItem('zName', value.name);
+                localStorage.setItem('zAge', value.age);
+                localStorage.setItem('zGender', value.is_gnd);
+                localStorage.setItem('zEmail', value.email);
+                localStorage.setItem('zIsSmoker', value.is_smoker);
+                localStorage.setItem('zPhone', value.phone);
 
-                // console.log(JSON.stringify(cameluser))
-               router.push({ pathname: '/chooseOne', query: { cameluser: cameluser }});
+                // //console.log(JSON.stringify(cameluser))
+                router.push({ pathname: '/color', query: { cameluser: cameluser } });
             }
             // alert(JSON.stringify(result));
-        } catch (e) { 
-            console.log(e)
-         }
+        } catch (e) {
+            // //console.log(e)
+        }
         // router.push({ pathname: '/chooseOne' }); 
 
     }
@@ -112,14 +111,14 @@ localStorage.setItem('zPhone', value.phone);
                                                 <div className="flex-radioitems ml-10">
                                                     <label className="label-text ">sexe</label>
                                                     <form class="boxed">
-                                                        <input {...register('is_gnd')} type="radio" id="android" name="skills" value="F" />
-                                                        <label className='radio-label' for="android">F</label>
+                                                        <input  type="radio" id="female-gender" {...register('is_gnd')} name="is_gnd" value="female" />
+                                                        <label className='radio-label' htmlFor="female-gender">F</label>
 
-                                                        <input  {...register('is_gnd')} type="radio" id="ios" name="skills" value="H" />
-                                                        <label className='radio-label' for="ios">H</label>
+                                                        <input   type="radio" id="male-gender" name="is_gnd" {...register('is_gnd')} value="male" />
+                                                        <label className='radio-label' htmlFor="male-gender">H</label>
                                                     </form>
                                                 </div>
-                                                <div><span className="text-red-400 text-sm">{errors?.is_smoker?.message}</span></div>
+                                                <div><span className="text-red-400 text-sm">{errors?.is_gnd?.message}</span></div>
                                             </div>
                                             <div className="mt-10 ml-10">
                                                 <div className="flex-radioitems">
@@ -141,15 +140,15 @@ localStorage.setItem('zPhone', value.phone);
                                                 <div className="flex-radioitems ml-10">
                                                     <label className="label-text ">êtes-vous fumeur?</label>
                                                     <div className='radio-flex-2'>
-                                                        <label class="">
+                                                        <label className="">
                                                             <div className='flex-scd'>
-                                                                <input className='checkmark' {...register('is_smoker')} id="parents" type="radio" name='radio' value="oui" />
+                                                                <input className='checkmark'  id="smoker-yes" type="radio" {...register('is_smoker')} name='is_smoker' value="yes" />
                                                                 <label className="yes">oui</label>
                                                             </div>
                                                         </label>
-                                                        <label class="">
+                                                        <label className="">
                                                             <div className='flex-scd'>
-                                                                <input className='checkmark' {...register('is_smoker')} id="parents" type="radio" name='radio' value="non" />
+                                                                <input className='checkmark'  id="smoker-no" type="radio" {...register('is_smoker')} name='is_smoker' value="no" />
                                                                 <label className='yes'>non</label>
                                                             </div>
                                                         </label>

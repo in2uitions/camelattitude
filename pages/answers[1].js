@@ -23,15 +23,7 @@ export default function Orange() {
     useEffect(() => {
         getApiData();
         getData();
-        console.log('---------------------------------')
-        console.log('zIddddd in AnsZero')
-        console.log(localStorage.getItem('zId'))
-        console.log('zQst')
-        console.log(localStorage.getItem('zQst'))
-        console.log('zAns')
-        console.log(localStorage.getItem('zAns'))
-    
-        console.log('---------------------------------')
+
 
     }, []);
     const [nouvelleAnsObj, setPageAns2Obj] = useState([]);
@@ -44,11 +36,10 @@ export default function Orange() {
     const ans2Obj = await getById('questions',query.answers_id);
     setPageAns2Obj(ans2Obj);
     setLoaded(true);
-    console.log('UpdateStart');
-    // localStorage.setItem('zCol', item.background_color);
-    // localStorage.setItem('zAtt', item.answers[1].attitude);
+
+    //console.log('UpdateStart');
     createsmoker();
-    console.log('UpdateEnd');
+    //console.log('UpdateEnd');
 }
 const getData = async () => {
 const quest2Obj = await getById('lighter',query.page_id);

@@ -48,6 +48,7 @@ h3 {
   justify-content: space-evenly;
 }
 .input-text {
+  padding-left: 15px ;
   width: 70%;
   height: 45px;
   color: black;
@@ -86,9 +87,9 @@ button, input, optgroup, select, textarea {
   color: #000;
   padding: 0;
 }
-.boxed input[type="radio"] {
+/* .boxed input[type="radio"] {
   display: none;
-}
+} */
 
 .boxed input[type="radio"]:checked + label {
   border: solid 2px green;
@@ -194,6 +195,7 @@ input[type='radio']:checked {
   width: 75%;
 }
 .input-txt {
+  padding-left: 15px;
   width: 94%;
   height: 45px;
   border-radius: 8px;

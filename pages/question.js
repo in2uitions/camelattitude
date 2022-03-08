@@ -18,8 +18,8 @@ import { getAllRecords } from '/api/server'
 
 export default function PageFive() {
     const { query } = useRouter()
-    // console.log('zIddddd in randomPages')
-    // console.log(localStorage.getItem('zId'))
+    // //console.log('zIddddd in randomPages')
+    // //console.log(localStorage.getItem('zId'))
     useEffect(() => {
         getApiData();
     }, []);
@@ -112,7 +112,7 @@ export default function PageFive() {
                     <div className="flex flex-row height-screen overflow-hidden ">
                         {nouvelleHomeObj.map((item) => (
                             <>
-                                <div className='flex flex-column w-screen'>
+                                <div className='flex flex-column w-screen'  key={item.id}>
                                     <div className=" flex flex-row  w-screen">
 
                                         <div className="basis-1/2" style={{ background: item.answers[0].color }}>
@@ -131,13 +131,13 @@ export default function PageFive() {
                                             {/* <h2 className=" text-6xl">{item.id}</h2> */}
                                             <div className=" flex flex-row  w-screen">
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { randomB(); randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer) }}>
+                                                    <div onClick={() => { randomB(); randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer); localStorage.setItem('zCol', item.answers[0].color); localStorage.setItem('zAtt', item.answers[0].attitude); }}>
                                                         <h3 className=" place absolument echecs text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[0].answer}</h3>
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="icon" />
                                                 </div>
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { rand(); randomans(); localStorage.setItem('zQst',  item.id); localStorage.setItem('zAns', item.answers[1].answer) }}>
+                                                    <div onClick={() => { rand(); random(); localStorage.setItem('zQst',  item.id); localStorage.setItem('zAns', item.answers[1].answer); localStorage.setItem('zCol', item.answers[1].color); localStorage.setItem('zAtt', item.answers[1].attitude); }}>
                                                         <h3 className="place mettre absolument text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[1].answer}</h3>
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="icon-f" />

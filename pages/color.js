@@ -16,16 +16,16 @@ import { getAllRecords } from '/api/server'
 
 export default function ChooseOne() {
     const { query } = useRouter()
-    // console.log('zIddddd in ChooseOne')
-    // console.log(localStorage.getItem('zId'))
+    // //console.log('zIddddd in ChooseOne')
+    // //console.log(localStorage.getItem('zId'))
     const router = useRouter()
     const getRandomInt = (max) => {
-        console.log('zIddddd')
-        console.log(localStorage.getItem('zId'))
+        //console.log('zIddddd')
+        //console.log(localStorage.getItem('zId'))
         return Math.floor(Math.random() * max);
     }
 const cameluser = query.cameluser;
-console.log(cameluser)
+//console.log(cameluser)
     const randomBatikh = async () => {
 
 
@@ -33,7 +33,7 @@ console.log(cameluser)
         var imageindedx = getRandomInt(nouvelleObj.length);
         for(let i=0; i<nouvelleObj.length; i++){
 if (i==imageindedx){
-    router.push({ pathname: '/randomPages', query: { page_id: nouvelleObj[i].id }});
+    router.push({ pathname: '/question', query: { page_id: nouvelleObj[i].id }});
 }
         }
     }

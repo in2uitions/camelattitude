@@ -21,18 +21,12 @@ export default function Orange() {
     const { query } = useRouter()
 
 
-    console.log('---------------------------------')
+    
     useEffect(() => {
 
         getApiData();
         getData();
-        console.log('---------------------------------')
-        console.log('zIddddd in AnsZero')
-        console.log(localStorage.getItem('zId'))
-        console.log('zQst')
-        console.log(localStorage.getItem('zQst'))
-        console.log('zAns')
-        console.log(localStorage.getItem('zAns'))
+
 
     }, []);
     const [nouvelleansObj, setPageansObj] = useState([]);
@@ -45,11 +39,10 @@ export default function Orange() {
     const ansObj = await getById('questions',query.page_id);
     setPageansObj(ansObj);
     setLoaded(true);
-    console.log('UpdateStart');
-    // localStorage.setItem('zCol', item.background_color);
-    // localStorage.setItem('zAtt', item.answers[0].attitude);
+
+    //console.log('UpdateStart');
     createsmoker();
-    console.log('UpdateEnd');
+    //console.log('UpdateEnd');
 }
 const getData = async () => {
 const questObj = await getById('lighter',query.page_id);
@@ -61,10 +54,10 @@ setLoaded(true);
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
                     <div className="flex flex-row height-screen overflow-hidden">
-                    <div className="relative flex flex-row height-screen w-screen">   
+                    <div className="relative flex flex-row height-screen w-screen" >   
                     {questHomeObj.map((item) => (
                     <>
-                            <div className="basis-full height-screen bg-camel-orange " style={{background:item.background_color}}></div>
+                            <div className="basis-full height-screen bg-camel-orange " style={{background:item.background_color}}  key={item.id}></div>
                             <div className="absolute grid place-content-center w-screen height-screen">
                                 {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
                                 <motion.img
@@ -105,7 +98,7 @@ setLoaded(true);
                                 <>
                                 <div>
                                     <h1 className="mt-6 ml-6 text-5xl text-white">VOUS<br />êtes</h1>
-                                    <h2 className="margin-top attitude color ml-6 text-7xl text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[0].attitude}</h2>
+                                    <h2 className="margin-top attitude color ml-6 text-7xl text-camel-darkblue transform -rotate-12 -translate-y-20"  key={item.id}>{item.answers[0].attitude}</h2>
                                     <img src="assets/images/bg-blue-answers.svg" className="img" />
                                     <h1 className="mt-6 ml-6 text-5xl text-white">comme<br></br>CAMEL!</h1>
                                 </div>
