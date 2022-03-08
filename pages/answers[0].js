@@ -19,14 +19,10 @@ import { createsmoker } from '../api/server'
 
 export default function Orange() {
     const { query } = useRouter()
-
-
     
     useEffect(() => {
-
         getApiData();
         getData();
-
 
     }, []);
     const [nouvelleansObj, setPageansObj] = useState([]);
