@@ -21,7 +21,7 @@ export const getAllRecords = async (collection) => {
     return annoncesPublished.data;
 }
 export const getById = async (collection, id) => {
-    //console.log(id);
+    console.log(id);
     const annonces = directus.items(collection);
     const annoncesPublished = await annonces.readByQuery({
         filter: {
@@ -36,6 +36,7 @@ export const getById = async (collection, id) => {
     return annoncesPublished.data;
 }
 
+
 export const createsmoker = async (data) => {
     const smokers = directus.items("smokers");
    // var zIdToUse = localStorage.getItem('zId');
@@ -49,7 +50,8 @@ export const createsmoker = async (data) => {
     var zPhoneToUse = localStorage.getItem('zPhone'); 
     var zColToUse = localStorage.getItem('zCol');
     var zAttToUse = localStorage.getItem('zAtt');
-
+console.log(zIsSmokerToUse);
+console.log(zGenderToUse);
     const annoncesPublished = await smokers.createOne({
         name: zNameToUse,
         age: zAgeToUse,
@@ -62,27 +64,27 @@ export const createsmoker = async (data) => {
         selected_color: zColToUse,
         selected_attitude: zAttToUse
     });
-
+console.log(annoncesPublished.id)
 localStorage.setItem('zId', annoncesPublished.id)
-
+console.log(localStorage.getItem('zId'))
     return annoncesPublished;
     
 }
 
-// export const updatesmoker = async (data) => {
-//     const smokers = directus.items("smokers");
-//     var zIdToUse = localStorage.getItem('zId');
-//     var zQstToUse = localStorage.getItem('zQst').toString;
-//     var zAnsToUse = localStorage.getItem('zAns').toString;
-//     const annoncesPublished = await smokers.updateOne(
-//         { 
-//         id: zIdToUse},
-//         {
-//             selected_question: zQstToUse,
-//             selected_answer: zAnsToUse,
-//     });
-//     return 'DONE';
-// }
+export const updatesmoker = async (data) => {
+    const smokers = directus.items("smokers");
+    var zIdToUse = localStorage.getItem('zId');
+    var zQstToUse = localStorage.getItem('zQst').toString;
+    var zAnsToUse = localStorage.getItem('zAns').toString;
+    const annoncesPublished = await smokers.updateOne(
+        { 
+        id: zIdToUse},
+        {
+            selected_question: zQstToUse,
+            selected_answer: zAnsToUse,
+    });
+    return 'DONE';
+}
 
 
 export const getQuestions = async () => {
@@ -97,7 +99,7 @@ export const getQuestions = async () => {
     });
 
 
-    //console.log(comp_questionsPublished.data);
+    console.log(comp_questionsPublished.data);
 
     return comp_questionsPublished.data;
 }

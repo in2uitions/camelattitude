@@ -35,7 +35,7 @@ export default function Home() {
 
     const onSubmitForm = async (value) => {
         try {
-            // //console.log(value)
+            // console.log(value)
             const result = await validationSchema.validate(value)
             if (result) {
                 const cameluser = 1;// = await createsmoker(value)
@@ -46,12 +46,12 @@ export default function Home() {
                 localStorage.setItem('zIsSmoker', value.is_smoker);
                 localStorage.setItem('zPhone', value.phone);
 
-                // //console.log(JSON.stringify(cameluser))
+                // console.log(JSON.stringify(cameluser))
                 router.push({ pathname: '/color', query: { cameluser: cameluser } });
             }
             // alert(JSON.stringify(result));
         } catch (e) {
-            // //console.log(e)
+            // console.log(e)
         }
         // router.push({ pathname: '/chooseOne' }); 
 
@@ -62,14 +62,14 @@ export default function Home() {
         <div className="flex flex-col h-screen">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row height-screen overflow-hidden">
+                    <div className="flex flex-row h-screen overflow-hidden">
                         <div className='flex flex-column w-screen'>
                             <div className="relative flex flex-row  w-screen">
                                 <div className="basis-1/2 bg-camel-yellow">
-                                    <div className="basis-full height-screen bg-camel-yellow -skew-x-12"></div>
+                                    <div className="basis-full h-screen bg-camel-yellow -skew-x-12"></div>
                                 </div>
                                 <div className="basis-1/2 bg-camel-purple">
-                                    <div className="basis-full height-screen bg-camel-purple -skew-x-12"></div>
+                                    <div className="basis-full h-screen bg-camel-purple -skew-x-12"></div>
                                 </div>
                                 <div className="absolute grid place-content-center placing w-screen h-screen ">
                                     {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
@@ -87,7 +87,7 @@ export default function Home() {
                             </div>
 
                         </div>
-                        <div className="absolute flex flex-row height-screen w-screen">
+                        <div className="absolute flex flex-row h-screen w-screen">
                             <form onSubmit={handleSubmit(onSubmitForm)} id="contact-form" method="get" action="/chooseOne" className={errors ? 'form-errors-cust' : ''}>
                                 <div className="basis-1/2">
                                     <div className="page-contact-inner">
@@ -164,7 +164,7 @@ export default function Home() {
                                 </div>
                                 <div className="basis-1/2 flex flex-wrap content-end">
                                     <a onClick={() => { onSubmitForm() }}>
-                                        <input type="image" className="absolute h-1/6 right-20 bottom-10" src="assets/images/lets-camel.svg" />
+                                        <input type="image" className="absolute h-1/6 right-20 lets" src="assets/images/lets-camel.svg" />
                                     </a>
                                 </div>
                             </form>
@@ -173,7 +173,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex-none h-14">
-                    fumer nuit à votre entourage التدخين يضر بمحيطكم
+                FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
                 </div>
             </div>
         </div >

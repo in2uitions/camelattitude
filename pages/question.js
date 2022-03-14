@@ -18,8 +18,8 @@ import { getAllRecords } from '/api/server'
 
 export default function PageFive() {
     const { query } = useRouter()
-    // //console.log('zIddddd in randomPages')
-    // //console.log(localStorage.getItem('zId'))
+    // console.log('zIddddd in randomPages')
+    // console.log(localStorage.getItem('zId'))
     useEffect(() => {
         getApiData();
     }, []);
@@ -79,32 +79,32 @@ export default function PageFive() {
         return Math.floor(Math.random() * max);
     }
 
-    // const randomans = async () => {
-    //     const quest2Obj = await getAllRecords('lighter');
-    //     var questscd = getRandomANS(quest2Obj.length);
-    //     for (let i = 0; i < quest2Obj.length; i++) {
-    //         if (i == questscd) {
-    //             fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
-    //         }
-    //     }
-    // }
-    const randomans = async (value) => {
-        try {
-            const quest2Obj = await getAllRecords('lighter');
+    const randomans = async () => {
+        const quest2Obj = await getAllRecords('lighter');
         var questscd = getRandomANS(quest2Obj.length);
-            const result = await validationSchema.validate(value)
-            if (result) {
-               // const user = await createanswer(result)
-                for (let i = 0; i < quest2Obj.length; i++) {
-                    if (i == questscd) {
-                        fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
-                    }
-                }
+        for (let i = 0; i < quest2Obj.length; i++) {
+            if (i == questscd) {
+                fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
             }
-            // alert(JSON.stringify(result));
-        } catch (e) { }
-        // router.push({ pathname: '/chooseOne' }); 
+        }
     }
+    // const randomans = async (value) => {
+    //     try {
+    //         const quest2Obj = await getAllRecords('lighter');
+    //         var questscd = getRandomANS(quest2Obj.length);
+    //         const result = await validationSchema.validate(value)
+    //         if (result) {
+    //             const user = await createanswer(result)
+    //             for (let i = 0; i < quest2Obj.length; i++) {
+    //                 if (i == questscd) {
+    //                     fourthrouter.push({ pathname: '/answers[1]', query: { page_id: quest2Obj[i].id } });
+    //                 }
+    //             }
+    //         }
+    //         alert(JSON.stringify(result));
+    //     } catch (e) { }
+    //     router.push({ pathname: '/chooseOne' });
+    // }
     return (
         <div className="flex flex-col h-screen">
             <div className="grow">
@@ -112,7 +112,7 @@ export default function PageFive() {
                     <div className="flex flex-row height-screen overflow-hidden ">
                         {nouvelleHomeObj.map((item) => (
                             <>
-                                <div className='flex flex-column w-screen'  key={item.id}>
+                                <div className='flex flex-column w-screen' key={item.id}>
                                     <div className=" flex flex-row  w-screen">
 
                                         <div className="basis-1/2" style={{ background: item.answers[0].color }}>
@@ -131,16 +131,16 @@ export default function PageFive() {
                                             {/* <h2 className=" text-6xl">{item.id}</h2> */}
                                             <div className=" flex flex-row  w-screen">
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { randomB(); randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer); localStorage.setItem('zCol', item.answers[0].color); localStorage.setItem('zAtt', item.answers[0].attitude); }}>
+                                                    <div onClick={() => { randomB();  localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer); localStorage.setItem('zCol', item.answers[0].color); localStorage.setItem('zAtt', item.answers[0].attitude); }}>
                                                         <h3 className=" place absolument echecs text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[0].answer}</h3>
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="icon" />
                                                 </div>
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { rand(); random(); localStorage.setItem('zQst',  item.id); localStorage.setItem('zAns', item.answers[1].answer); localStorage.setItem('zCol', item.answers[1].color); localStorage.setItem('zAtt', item.answers[1].attitude); }}>
+                                                    <div onClick={() => { randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[1].answer); localStorage.setItem('zCol', item.answers[1].color); localStorage.setItem('zAtt', item.answers[1].attitude); }}>
                                                         <h3 className="place mettre absolument text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[1].answer}</h3>
                                                     </div>
-                                                    <img src="assets/images/attitude.svg" className="icon-f" />
+                                                    <img src="assets/images/attitude.svg" className="h-1/6 icon-f" />
                                                 </div>
                                             </div>
                                         </div>
@@ -153,7 +153,7 @@ export default function PageFive() {
                     </div>
                 </div>
                 <div className="flex-none h-14">
-                    fumer nuit à votre entourage التدخين يضر بمحيطكم
+                    FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
                 </div>
             </div>
         </div>

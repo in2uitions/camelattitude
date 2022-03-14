@@ -233,7 +233,7 @@ input[type='radio']:checked {
 .course-categories {
   display: flex;
   justify-content: space-between;
-  margin-top: 310px;
+  margin-top: 200px;
   width: 100%;
 }
 
@@ -524,4 +524,21 @@ input[type='radio']:checked {
 }
 .color{
   color: #00A3E0;
+}
+.box{
+  position: absolute;
+    border-radius: 25px;
+    background-color: #FEDD00;
+    -webkit-box-shadow: -7px -12px 20px 0px #fff, 25px 27px 34px -29px #000000; 
+    box-shadow: -7px -12px 20px 0px #fff, 25px 27px 34px -29px #000000;
+    font-size: 19px;
+    color: #003C71;
+    font-family: "camelbold";
+    src: url(/assets/fonts/camel/camel-bold.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    padding: 20px;
+}
+.lets{
+  bottom: 7.5rem;
 }
