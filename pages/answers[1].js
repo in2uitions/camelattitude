@@ -54,17 +54,17 @@ export default function Orange() {
         <div className="flex flex-col">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row h-screen overflow-hidden">
+                    <div className="flex flex-row height-screen overflow-hidden">
 
                         {questHomeObj.map((item) => (
                             <>
-                                <div className="relative flex flex-row h-screen w-screen" >
-                                    <div className="basis-full h-screen  " style={{ background: item.background_color }} key={item.id}></div>
-                                    <div className="absolute grid place-content-center w-screen h-screen">
-                                        {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
+                                <div className="relative flex flex-row height-screen w-screen" >
+                                    <div className="basis-full height-screen  " style={{ background: item.background_color }} key={item.id}></div>
+                                    <div className="absolute grid place-content-center w-screen height-screen">
+                                        {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
                                         <motion.img
                                             src={`${image_url}${item.background_image}`}
-                                            className="h-screen"
+                                            className="height-screen"
                                             initial={{ opacity: 0, scale: 0 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{
@@ -77,10 +77,10 @@ export default function Orange() {
 
 
 
-                                <div className="absolute grid place-content-center w-screen h-screen">
+                                <div className="absolute grid  width-screen h-screen">
                                     <motion.img
                                         src={`${image_url}${item.lighter}`}
-                                        className="h-4/6 rotate-12"
+                                        className="h-4/6 rotate-12 place-content-center"
                                         initial={{ x: 100, y: -1000, rotate: 0 }}
                                         animate={{ x: 250, y: 100, rotate: 0 }}
                                         transition={{
@@ -93,7 +93,7 @@ export default function Orange() {
                                 </div>
                             </>
                         ))}
-                        <div className="absolute flex flex-row h-screen w-screen">
+                        <div className="absolute flex flex-row height-screen w-screen">
                             <div className="basis-1/2">
                                 {questHomeObj.map((item) => (
                                     <>
@@ -121,7 +121,7 @@ export default function Orange() {
                                     <div className="basis-1/2 flex flex-wrap content-end">
                                         {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
                                         <a href='thankyou'>
-                                            <img src={`${image_url}${item.lets_image}`} className="absolute h-1/6 right-20 lets" />
+                                            <img src={`${image_url}${item.lets_image}`} className="absolute h-1/6 right-20 bottom-10" />
                                         </a>
 
                                     </div>

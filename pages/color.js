@@ -45,19 +45,19 @@ if (i==imageindedx){
         <div className="flex flex-col">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row h-screen overflow-hidden">
-                        <div className="relative flex flex-row h-screen w-screen">
+                    <div className="flex flex-row height-screen overflow-hidden">
+                        <div className="relative flex flex-row height-screen w-screen">
                             <div className="basis-1/2 bg-camel-yellow">
-                                <div className="basis-full h-screen bg-camel-yellow -skew-x-12"></div>
+                                <div className="basis-full height-screen bg-camel-yellow -skew-x-12"></div>
                             </div>
                             <div className="basis-1/2 bg-camel-blue">
-                                <div className="basis-full h-screen bg-camel-blue -skew-x-12"></div>
+                                <div className="basis-full height-screen bg-camel-blue -skew-x-12"></div>
                             </div>
-                            <div className="absolute grid place-content-center w-screen ml-30 h-screen">
-                                {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
+                            <div className="absolute grid place-content-center w-screen ml-30 height-screen">
+                                {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
                                 <motion.img
                                     src="assets/images/splash-yellow-blue-3.svg"
-                                    className="h-screen"
+                                    className="height-screen"
                                     initial={{ opacity: 0, scale: 0 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{
@@ -67,16 +67,16 @@ if (i==imageindedx){
                                 />
                             </div>
                         </div>
-                        <div className="absolute flex flex-row h-screen w-screen">
+                        <div className="absolute flex flex-row height-screen w-screen">
                             <div className="basis-1/2">
                                 <div>
-                                    <h1 className="mt-6 ml-6 text-5xl text-camel-blue">les<br />couleurs<br />révèlent</h1>
+                                    <h1 className="mt-6 ml-6 text-4xl text-camel-blue">les<br />couleurs<br />révèlent</h1>
                                     <h2 className="margin-top attitude ml-6 text-7xl text-camel-darkblue transform -rotate-12 -translate-y-20">L'ATTITUDE!</h2>
                                     <img src="assets/images/attitude.svg" className="icon" />
-                                    <h1 className="mt-6 ml-6 text-5xl text-camel-blue">Quelle couleur<br></br> es-tu?</h1>
+                                    <h1 className=" ml-6 text-4xl text-camel-blue">Quelle couleur<br></br> es-tu?</h1>
                                 </div>
                             </div>
-                            <div className="absolute grid place-content-center mb-20 width-screen h-screen">
+                            <div className="absolute grid place-content-center flex-squares mb-20 width-screen height-screen">
                                 <div className="row no-gutters">
                                     <div className="course-categories">
                                         <div className="category-item category-bg-1">
@@ -112,7 +112,7 @@ if (i==imageindedx){
                             <div className="basis-1/2 flex flex-wrap content-end">
                                 {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
                                 <div onClick={() => { randomBatikh() }}>
-                                    <img src="assets/images/lets-camel.svg" id="" className="absolute h-1/6 right-20 lets" />
+                                    <img src="assets/images/lets-camel.svg" id="" className="absolute h-1/6 right-20 bottom-10" />
                                 </div>
 
                             </div>

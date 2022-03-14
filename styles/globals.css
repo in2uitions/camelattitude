@@ -87,9 +87,9 @@ button, input, optgroup, select, textarea {
   color: #000;
   padding: 0;
 }
-/* .boxed input[type="radio"] {
+.boxed input[type="radio"] {
   display: none;
-} */
+}
 
 .boxed input[type="radio"]:checked + label {
   border: solid 2px green;
@@ -183,7 +183,7 @@ input[type='radio']:checked {
   height: 90vh;
 }
 .mt-10 {
-  margin-top: 2vh;
+  margin-top: 0.5vh;
 }
 .p-form {
   color: #003c71;
@@ -373,8 +373,10 @@ input[type='radio']:checked {
   -webkit-text-fill-color: transparent;
 }
 .absolument{
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1;
+
+  
   width: 50%;
 }
 
@@ -503,8 +505,7 @@ input[type='radio']:checked {
 }
 .img{
   width: 45%;
-  margin-left: 7vh;
-  margin-top: -5vh;
+  margin-left: 12vh;
 }
 .margin-l{
   margin-left: 11rem;
@@ -538,7 +539,9 @@ input[type='radio']:checked {
     font-weight: normal;
     font-style: normal;
     padding: 20px;
+    width: 13%;
 }
 .lets{
-  bottom: 7.5rem;
+  bottom: 2rem;
+  right: 3.5rem;
 }

@@ -59,23 +59,23 @@ export default function Home() {
 
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col height-screen">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row h-screen overflow-hidden">
+                    <div className="flex flex-row height-screen overflow-hidden">
                         <div className='flex flex-column w-screen'>
                             <div className="relative flex flex-row  w-screen">
                                 <div className="basis-1/2 bg-camel-yellow">
-                                    <div className="basis-full h-screen bg-camel-yellow -skew-x-12"></div>
+                                    <div className="basis-full height-screen bg-camel-yellow -skew-x-12"></div>
                                 </div>
                                 <div className="basis-1/2 bg-camel-purple">
-                                    <div className="basis-full h-screen bg-camel-purple -skew-x-12"></div>
+                                    <div className="basis-full height-screen bg-camel-purple -skew-x-12"></div>
                                 </div>
-                                <div className="absolute grid place-content-center placing w-screen h-screen ">
-                                    {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
+                                <div className="absolute grid place-content-center placing w-screen height-screen ">
+                                    {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
                                     <motion.img
                                         src="assets/images/splash-yellow-purple.svg"
-                                        className="h-screen"
+                                        className="height-screen"
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{
@@ -87,7 +87,7 @@ export default function Home() {
                             </div>
 
                         </div>
-                        <div className="absolute flex flex-row h-screen w-screen">
+                        <div className="absolute flex flex-row height-screen w-screen">
                             <form onSubmit={handleSubmit(onSubmitForm)} id="contact-form" method="get" action="/chooseOne" className={errors ? 'form-errors-cust' : ''}>
                                 <div className="basis-1/2">
                                     <div className="page-contact-inner">
@@ -164,7 +164,7 @@ export default function Home() {
                                 </div>
                                 <div className="basis-1/2 flex flex-wrap content-end">
                                     <a onClick={() => { onSubmitForm() }}>
-                                        <input type="image" className="absolute h-1/6 right-20 lets" src="assets/images/lets-camel.svg" />
+                                        <input type="image" className="absolute h-1/6 right-20 bottom-10" src="assets/images/lets-camel.svg" />
                                     </a>
                                 </div>
                             </form>
