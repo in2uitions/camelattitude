@@ -75,7 +75,6 @@ export default function Home() {
                 <a href='smoker'>
                   <img src="assets/images/lets-camel.svg" className="absolute h-1/6 right-20 lets" />
                 </a>
-
               </div>
             </div>
             <Script strategy="beforeInteractive" src="assets/js/custom-script.js" />

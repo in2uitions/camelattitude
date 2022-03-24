@@ -14,6 +14,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
 import { getById } from '/api/server'
+import { image_url } from '../global'
 import { getAllRecords } from '/api/server'
 
 export default function PageFive() {
@@ -105,6 +106,17 @@ export default function PageFive() {
     //     } catch (e) { }
     //     router.push({ pathname: '/chooseOne' });
     // }
+    useEffect(() => {
+        getData();
+    }, []);
+    const [questHomeObj, setPageQuestObj] = useState([]);
+    const questHomeObjArray = Array.from(questHomeObj);
+
+    const getData = async () => {
+        const questObj = await getById('lighter', query.page_id);
+        setPageQuestObj(questObj);
+        setLoaded(true);
+    }
     return (
         <div className="flex flex-col h-screen">
             <div className="grow">
@@ -145,7 +157,15 @@ export default function PageFive() {
                                             </div>
                                         </div>
                                     </>
+                                        <>
+                                    <div className="basis-1/2 flex flex-wrap content-end">
+                                {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
+                                <div>
+                                    <img src={`${image_url}${item.lets_image}`} id="" className="absolute lets h-1/6 right-20 bottom-10" />
+                                </div>
 
+                            </div>
+                            </>
                                 </div>
                                 <Script strategy="beforeInteractive" src="assets/js/custom-script.js" />
                             </>

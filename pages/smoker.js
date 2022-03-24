@@ -28,7 +28,7 @@ export default function Home() {
             .required('Email is required')
             .email('Email is invalid'),
         age: Yup.string().required('must be 18 years old'),
-        
+
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
     const { register, handleSubmit, formState: { errors }, reset } = useForm(formOptions);
@@ -111,10 +111,10 @@ export default function Home() {
                                                 <div className="flex-radioitems ml-10">
                                                     <label className="label-text ">sexe</label>
                                                     <form class="boxed">
-                                                        <input  type="radio" id="female-gender" {...register('is_gnd')} name="is_gnd" value="female" />
+                                                        <input type="radio" id="female-gender" {...register('is_gnd')} name="is_gnd" value="female" />
                                                         <label className='radio-label' htmlFor="female-gender">F</label>
 
-                                                        <input   type="radio" id="male-gender" name="is_gnd" {...register('is_gnd')} value="male" />
+                                                        <input type="radio" id="male-gender" name="is_gnd" {...register('is_gnd')} value="male" />
                                                         <label className='radio-label' htmlFor="male-gender">H</label>
                                                     </form>
                                                 </div>
@@ -142,13 +142,13 @@ export default function Home() {
                                                     <div className='radio-flex-2'>
                                                         <label className="">
                                                             <div className='flex-scd'>
-                                                                <input className='checkmark'  id="smoker-yes" type="radio" {...register('is_smoker')} name='is_smoker' value="yes" />
+                                                                <input className='checkmark' id="smoker-yes" type="radio" {...register('is_smoker')} name='is_smoker' value="yes" />
                                                                 <label className="yes">oui</label>
                                                             </div>
                                                         </label>
                                                         <label className="">
                                                             <div className='flex-scd'>
-                                                                <input className='checkmark'  id="smoker-no" type="radio" {...register('is_smoker')} name='is_smoker' value="no" />
+                                                                <input className='checkmark' id="smoker-no" type="radio" {...register('is_smoker')} name='is_smoker' value="no" />
                                                                 <label className='yes'>non</label>
                                                             </div>
                                                         </label>
@@ -164,7 +164,10 @@ export default function Home() {
                                 </div>
                                 <div className="basis-1/2 flex flex-wrap content-end">
                                     <a onClick={() => { onSubmitForm() }}>
-                                        <input type="image" className="absolute h-1/6 right-20 bottom-10" src="assets/images/lets-camel.svg" />
+                                        <input type="image" className="absolute h-1/6 right-20 bottom-10 lets" src="assets/images/lets-camel.svg" />
+                                    </a>
+                                    <a href='color'>
+                                        <img src="assets/images/skip-arrow.png" className="absolute h-1/6 right-20 skip" />
                                     </a>
                                 </div>
                             </form>
@@ -173,7 +176,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex-none h-14">
-                FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
+                    FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
                 </div>
             </div>
         </div >
