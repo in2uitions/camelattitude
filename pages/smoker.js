@@ -166,9 +166,9 @@ export default function Home() {
                                     <a onClick={() => { onSubmitForm() }}>
                                         <input type="image" className="absolute h-1/6 right-20 bottom-10 lets" src="assets/images/lets-camel.svg" />
                                     </a>
-                                    <a href='color'>
+                                    {/* <a href='color'>
                                         <img src="assets/images/skip-arrow.png" className="absolute h-1/6 right-20 skip" />
-                                    </a>
+                                    </a> */}
                                 </div>
                             </form>
                         </div>
