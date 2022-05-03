@@ -59,23 +59,23 @@ export default function Home() {
 
 
     return (
-        <div className="flex flex-col height-screen">
+        <div className="flex flex-col fixed h-screen  overflow-hidden">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row height-screen overflow-hidden">
+                    <div className="flex flex-row h-screen overflow-hidden">
                         <div className='flex flex-column w-screen'>
                             <div className="relative flex flex-row  w-screen">
                                 <div className="basis-1/2 bg-camel-yellow">
-                                    <div className="basis-full height-screen bg-camel-yellow -skew-x-12"></div>
+                                    <div className="basis-full h-screen bg-camel-yellow -skew-x-12"></div>
                                 </div>
                                 <div className="basis-1/2 bg-camel-purple">
-                                    <div className="basis-full height-screen bg-camel-purple -skew-x-12"></div>
+                                    <div className="basis-full h-screen bg-camel-purple -skew-x-12"></div>
                                 </div>
-                                <div className="absolute grid place-content-center placing w-screen height-screen ">
+                                <div className="absolute grid place-content-center placing w-screen h-screen ">
                                     {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
                                     <motion.img
                                         src="assets/images/splash-yellow-purple.svg"
-                                        className="height-screen"
+                                        className="h-screen"
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{
@@ -87,7 +87,7 @@ export default function Home() {
                             </div>
 
                         </div>
-                        <div className="absolute flex flex-row height-screen w-screen">
+                        <div className="absolute flex flex-row h-screen w-screen">
                             <form onSubmit={handleSubmit(onSubmitForm)} id="contact-form" method="get" action="/chooseOne" className={errors ? 'form-errors-cust' : ''}>
                                 <div className="basis-1/2">
                                     <div className="page-contact-inner">
@@ -110,7 +110,7 @@ export default function Home() {
                                             <div className="mt-10">
                                                 <div className="flex-radioitems ml-10">
                                                     <label className="label-text ">sexe</label>
-                                                    <form class="boxed">
+                                                    <form className="boxed">
                                                         <input type="radio" id="female-gender" {...register('is_gnd')} name="is_gnd" value="female" />
                                                         <label className='radio-label' htmlFor="female-gender">F</label>
 
@@ -166,19 +166,19 @@ export default function Home() {
                                     <a onClick={() => { onSubmitForm() }}>
                                         <input type="image" className="absolute h-1/6 right-20 bottom-10 lets" src="assets/images/lets-camel.svg" />
                                     </a>
-                                    {/* <a href='color'>
-                                        <img src="assets/images/skip-arrow.png" className="absolute h-1/6 right-20 skip" />
-                                    </a> */}
                                 </div>
                             </form>
+                            
                         </div>
+                        
                         <Script strategy="beforeInteractive" src="assets/js/custom-script.js" />
                     </div>
                 </div>
-                <div className="flex-none h-14">
-                    FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
-                </div>
+
             </div>
-        </div >
+            <div className=" w-screen fixed flex-none h-14">
+                                FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
+                            </div>
+        </div>
     )
 }

@@ -9,16 +9,16 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col fixed h-screen w-screen overflow-hidden">
       <div className="grow">
         <div className="flex flex-row overflow-hidden">
-          <div className="flex flex-row height-screen overflow-hidden">
-            <div className="relative flex flex-row height-screen w-screen">
+          <div className="flex flex-row  overflow-hidden">
+            <div className="relative flex flex-row h-screen w-screen">
               <div className="basis-1/2 bg-camel-yellow">
-                <div className="basis-full height-screen bg-camel-yellow -skew-x-12"></div>
+                <div className="basis-full h-screen bg-camel-yellow -skew-x-12"></div>
               </div>
               <div className="basis-1/2 bg-camel-blue">
-                <div className="basis-full height-screen bg-camel-blue -skew-x-12"></div>
+                <div className="basis-full h-screen bg-camel-blue -skew-x-12"></div>
               </div>
               <div className="absolute grid place-content-center w-screen height-screen">
                 {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
@@ -33,56 +33,62 @@ export default function Home() {
                   }}
                 />
               </div>
-              <div className="absolute flex place-content-center w-screen h-screen">
+              <div className="absolute flex place-content-center w-screen height-screen">
                 <motion.img
                   src="assets/images/camel-yellow-pack.png"
                   className="h-4/6 rotate-12"
                   initial={{ x: 100, y: -1000, rotate: 0 }}
-                  animate={{ x: 10, y: 150, rotate: 12 }}
+                  animate={{ x: -60, y: 150, rotate: 12 }}
                   transition={{
                     type: "spring",
                     duration: 0.5,
                     delay: 1
                   }}
                 />
-                {/* <img src="assets/img/camel-yellow-pack.png" className="h-4/6 transform rotate-12 translate-y-44"/> */}
+
               </div>
-              <div className="absolute flex place-content-center w-screen h-screen">
+              {/* <img src="assets/img/camel-yellow-pack.png" className="h-4/6 transform rotate-12 translate-y-44"/> */}
+              <div className="absolute flex place-content-center w-screen height-screen">
                 <motion.img
                   src="assets/images/camel-blue-pack.png"
                   className="h-4/6 rotate-12"
                   initial={{ x: 100, y: 1000, rotate: 0 }}
-                  animate={{ x: 280, y: 180, rotate: 12 }}
+                  animate={{ x: 180, y: 200, rotate: 12 }}
                   transition={{
                     type: "spring",
                     duration: 0.5,
                     delay: 1
                   }}
                 />
-                {/* <img src="assets/img/camel-blue-pack.png" className="h-4/6 transform rotate-12 translate-x-72 translate-y-44"/> */}
+
               </div>
+              {/* <img src="assets/img/camel-blue-pack.png" className="h-4/6 transform rotate-12 translate-x-72 translate-y-44"/> */}
             </div>
-            <div className="absolute flex flex-row height-screen w-screen">
+            <div className="absolute flex flex-row h-screen w-screen">
               <div className="basis-1/2">
                 <div>
-                  <h1 className="mt-6 ml-6 text-6xl text-camel-blue">TOUT<br />EST<br />DANS</h1>
-                  <h2 className="margin-top attitude ml-6 text-7xl text-camel-darkblue transform -rotate-12 -translate-y-20">L'ATTITUDE!</h2>
+                  <h1 className="mt-6 ml-6 text-6xl text-camel-blue textFirst">TOUT<br />EST<br />DANS</h1>
+                  <h2 className="margin-top attitude ml-6 text-7xl text-camel-darkblue transform -rotate-12">L'ATTITUDE!</h2>
                   <img src="assets/images/attitude.svg" className="img" />
                 </div>
               </div>
               <div className="basis-1/2 flex flex-wrap content-end">
-                {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
+                {/* <span className="absolute right-0 bottom-0">sdfsfsd</span> */}
                 <a href='smoker'>
                   <img src="assets/images/lets-camel.svg" className="absolute h-1/6 right-20 lets" />
                 </a>
               </div>
+              <div className="flex-none w-screen h-14">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
+              </div>
             </div>
+
             <Script strategy="beforeInteractive" src="assets/js/custom-script.js" />
+
           </div>
+
         </div>
       </div>
-      <div className="flex-none h-14">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
-      </div>
+
     </div>
   )
 }
