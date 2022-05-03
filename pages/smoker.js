@@ -27,7 +27,7 @@ export default function Home() {
         email: Yup.string()
             .required('Email est obligatoire')
             .email('Email est non valable'),
-        age: Yup.string().required('doint etre 18 ans'),
+        age: Yup.string().required('doit etre 18 ans'),
 
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
