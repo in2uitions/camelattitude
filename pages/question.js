@@ -118,10 +118,10 @@ export default function PageFive() {
         setLoaded(true);
     }
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen fixed">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row height-screen overflow-hidden ">
+                    <div className="flex flex-row h-screen overflow-hidden ">
                         {nouvelleHomeObj.map((item) => (
                             <>
                                 <div className='flex flex-column w-screen' key={item.id}>
@@ -135,7 +135,7 @@ export default function PageFive() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="absolute flex flex-row height-screen w-screen">
+                                <div className="absolute flex flex-row h-screen w-screen">
 
                                     <>
                                         <div className="absolute grid place-content-center w-screen height-screen" key={item.id}>
@@ -159,9 +159,9 @@ export default function PageFive() {
                                     </>
                                         <>
                                     <div className="basis-1/2 flex flex-wrap content-end">
-                                {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
+                                {/* <span className="absolute right-0 bottom-0">sdfsfsd</span> */}
                                 <div>
-                                    <img src={`${image_url}${item.lets_image}`} id="" className="absolute lets h-1/6 right-20 bottom-10" />
+                                    <img src={`${image_url}${item.lets_image}`} id="" className="absolute  h-1/6 right-20 lets" />
                                 </div>
 
                             </div>
@@ -172,7 +172,7 @@ export default function PageFive() {
                         ))}
                     </div>
                 </div>
-                <div className="flex-none h-14">
+                <div className="flex-none w-screen h-14">
                     FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
                 </div>
             </div>

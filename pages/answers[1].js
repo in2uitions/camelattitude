@@ -51,20 +51,20 @@ export default function Orange() {
         setLoaded(true);
     }
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col h-screen fixed">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row height-screen overflow-hidden">
+                    <div className="flex flex-row h-screen overflow-hidden">
 
                         {questHomeObj.map((item) => (
                             <>
-                                <div className="relative flex flex-row height-screen w-screen" >
-                                    <div className="basis-full height-screen  " style={{ background: item.background_color }} key={item.id}></div>
-                                    <div className="absolute grid place-content-center w-screen height-screen">
-                                        {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
+                                <div className="relative flex flex-row h-screen w-screen" >
+                                    <div className="basis-full h-screen  " style={{ background: item.background_color }} key={item.id}></div>
+                                    <div className="absolute grid place-content-center w-screen h-screen">
+                                        {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
                                         <motion.img
                                             src={`${image_url}${item.background_image}`}
-                                            className="height-screen"
+                                            className="h-screen"
                                             initial={{ opacity: 0, scale: 0 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{
@@ -76,13 +76,12 @@ export default function Orange() {
                                 </div>
 
 
-
-                                <div className="absolute grid  width-screen h-screen">
+                                <div className="absolute grid place-content-center w-screen h-screen">
                                     <motion.img
                                         src={`${image_url}${item.lighter}`}
-                                        className="h-4/6 rotate-12 place-content-center"
+                                        className="h-4/6 rotate-12"
                                         initial={{ x: 100, y: -1000, rotate: 0 }}
-                                        animate={{ x: 250, y: 100, rotate: 0 }}
+                                        animate={{ x: 200, y: 50, rotate: 0 }}
                                         transition={{
                                             type: "spring",
                                             duration: 0.5,
@@ -93,7 +92,7 @@ export default function Orange() {
                                 </div>
                             </>
                         ))}
-                        <div className="absolute flex flex-row height-screen w-screen">
+                        <div className="absolute flex flex-row h-screen w-screen">
                             <div className="basis-1/2">
                                 {questHomeObj.map((item) => (
                                     <>
@@ -104,14 +103,14 @@ export default function Orange() {
                                     <>
                                         <div>
                                             <>
-                                                <h2 className="margin-top attitude ml-6 text-7xl  transform -rotate-12 -translate-y-20" style={{ color: item.answers[1].text_color }} key={item.id}>{item.answers[1].attitude}</h2>
+                                                <h2 className="margin-top-at attitude ml-6 text-7xl  transform -rotate-12 -translate-y-20" style={{ color: item.answers[1].text_color }} key={item.id}>{item.answers[1].attitude}</h2>
                                             </>
                                         </div>
                                     </>
                                 ))}
                                 {questHomeObj.map((item) => (
                                     <>
-                                        <img src={`${image_url}${item.line}`} className="img" />
+                                        <img src={`${image_url}${item.line}`} className="icon-answer" />
                                         <h1 className="mt-6 ml-6 text-5xl text-white">{parse(`${item.text_two}`)}</h1>
                                     </>
                                 ))}
@@ -119,9 +118,9 @@ export default function Orange() {
                             {questHomeObj.map((item) => (
                                 <>
                                     <div className="basis-1/2 flex flex-wrap content-end">
-                                        {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
+                                        {/* <span className="absolute right-0 bottom-0">sdfsfsd</span> */}
                                         <a href='thankyou'>
-                                            <img src={`${image_url}${item.lets_image}`} className="absolute h-1/6 right-20 bottom-10" />
+                                            <img src={`${image_url}${item.lets_image}`} className="absolute h-1/6 right-20 lets" />
                                         </a>
 
                                     </div>
@@ -134,7 +133,7 @@ export default function Orange() {
 
                 </div>
             </div>
-            <div className="flex-none h-14">
+            <div className="flex-none w-screen h-14">
                 FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
             </div>
         </div>

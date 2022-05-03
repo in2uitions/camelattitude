@@ -1,0 +1,92 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-5cd94c89d3acac5f.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/0VyopH5F1lxaBJZHrUw3v/_buildManifest.js",
+    "static/0VyopH5F1lxaBJZHrUw3v/_ssgManifest.js",
+    "static/0VyopH5F1lxaBJZHrUw3v/_middlewareManifest.js"
+  ],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/758-468a1b1095b6b925.js",
+      "static/chunks/pages/index-393a19b26c23ca66.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/css/3e02482939213980.css",
+      "static/chunks/pages/_app-9cd1d19dd7237c4c.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/pages/_error-2280fa386d040b66.js"
+    ],
+    "/answers[0]": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/758-468a1b1095b6b925.js",
+      "static/chunks/73-b4874eae16f4cf80.js",
+      "static/chunks/935-4658e3a70ca4af1e.js",
+      "static/chunks/pages/answers[0]-a5c50cc3e9b52b90.js"
+    ],
+    "/answers[1]": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/758-468a1b1095b6b925.js",
+      "static/chunks/73-b4874eae16f4cf80.js",
+      "static/chunks/935-4658e3a70ca4af1e.js",
+      "static/chunks/pages/answers[1]-0e393716a7ecbdfb.js"
+    ],
+    "/color": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/758-468a1b1095b6b925.js",
+      "static/chunks/73-b4874eae16f4cf80.js",
+      "static/chunks/pages/color-c3e9c23005db3065.js"
+    ],
+    "/question": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/73-b4874eae16f4cf80.js",
+      "static/chunks/935-4658e3a70ca4af1e.js",
+      "static/chunks/pages/question-4f012e7905b7db66.js"
+    ],
+    "/smoker": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/758-468a1b1095b6b925.js",
+      "static/chunks/73-b4874eae16f4cf80.js",
+      "static/chunks/531-37f2d870369277a5.js",
+      "static/chunks/pages/smoker-b6bb63fb6c9661a8.js"
+    ],
+    "/thankyou": [
+      "static/chunks/webpack-cb7634a8b6194820.js",
+      "static/chunks/framework-5f4595e5518b5600.js",
+      "static/chunks/main-a4d9e436b9a532ca.js",
+      "static/chunks/869-7a14e2aca34650a0.js",
+      "static/chunks/758-468a1b1095b6b925.js",
+      "static/chunks/pages/thankyou-ee73de29a4652946.js"
+    ]
+  },
+  "ampFirstPages": []
+}

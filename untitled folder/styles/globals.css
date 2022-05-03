@@ -1,0 +1,547 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "camelbold";
+}
+
+h3 {
+  font-family: "dk_drop_dead_gorgeous";
+}
+@font-face {
+  font-family: "camelbold";
+  src: url("/assets/fonts/camel/camel-bold.woff2") format("woff2"),
+    url("/assets/fonts/camel/camel-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "dk_drop_dead_gorgeous";
+  src: url("/assets/fonts/dk/dk_drop_dead_gorgeous.woff2") format("woff2"),
+    url("/assets/fonts/dk/dk_drop_dead_gorgeous.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.flex-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.input-text {
+  padding-left: 15px ;
+  width: 70%;
+  height: 45px;
+  color: black;
+  font-size:25px;
+  border-radius: 8px;
+}
+.label-text {
+  color: #d8005e;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: "camelbold";
+  src: url("/assets/fonts/camel/camel-bold.woff2") format("woff2"),
+    url("/assets/fonts/camel/camel-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.flex-radioitems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.boxed label {
+  display: inline-block;
+  width: 55px;
+  padding: 5px;
+  transition: all 0.3s;
+  margin-right: 45px;
+  border-radius: 8px;
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  color: #000;
+  padding: 0;
+}
+.boxed input[type="radio"] {
+  display: none;
+}
+
+.boxed input[type="radio"]:checked + label {
+  border: solid 2px green;
+}
+.radio-label {
+  background-color: white;
+  color: #d8005e;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+.sq-radio {
+  display: block;
+  position: relative;
+  margin-right: 45px;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input[type=radio] {
+  border: 1px solid #fff;
+  -webkit-appearance: none;
+  margin-left: 20px;
+}
+input[type='radio']:checked {
+  background: #00a3e0;
+}
+.sq-radio input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  top: 0;
+  width: 50px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.sq-radio:hover input ~ .checkmark {
+  background-color: #241d25;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.sq-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.sq-radio .checkmark:after {
+  top: 7px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+}
+.radio-flex-2 {
+  display: flex;
+  flex-direction: row;
+}
+.quest{
+  font-family: camelbold;
+    font-size: 2.5rem;
+}
+.flex-none {
+  background: white;
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.2);
+  padding: 1.4rem;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10vh;
+  text-align: center;
+  font-size: 30px;
+}
+.height-screen {
+  height: 90vh;
+}
+.mt-10 {
+  margin-top: 0.5vh;
+}
+.p-form {
+  color: #003c71;
+  line-height: 1.25vw;
+}
+.flex-labels {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.input-txt {
+  padding-left: 15px;
+  width: 94%;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 25px;
+}
+.txt-p {
+  color: #d8005e;
+  font-size: 1.15rem;
+}
+.flex-scd {
+  display: flex;
+  flex-direction: column;
+}
+.yes {
+  color: #d8005e;
+  font-weight: bold;
+  font-size: 22px;
+  margin-left: 22px;
+}
+.margin-top {
+  margin-top: 5rem;
+}
+.ml-30 {
+  margin-left: 140px;
+}
+.placing {
+  margin-left: 190px;
+}
+.icon {
+  width: 40%;
+  margin-left: 15vh;
+  margin-top: -6vh;
+}
+
+.course-categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+  width: 100%;
+}
+
+.course-categories .category-item {
+  position: relative;
+  padding: 60px;
+  margin: 0px 20px 0px;
+  width: 100%;
+  border-radius: 10px;
+  border-radius: 25px;
+  text-align: center;
+  -webkit-box-shadow: -12px -9px 5px 0px rgb(255 255 255 / 75%);
+  -moz-box-shadow: -12px -9px 5px 0px rgba(255, 255, 255, 0.75);
+  box-shadow: -7px -12px 20px 0px rgb(255 255 255 / 95%);
+}
+
+.course-categories .category-item i {
+  display: block;
+  font-size: 64px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.category-bg-1 {
+  background: #00a3e0;
+}
+
+.category-bg-2 {
+  background: #ed8b00;
+}
+
+.category-bg-3 {
+  background: #d8005e;
+}
+
+.category-bg-4 {
+  background: #fedd00;
+}
+
+.category-bg-5 {
+  background: #00af66;
+}
+.center {
+  align-items: center;
+}
+.colors {
+  position: absolute;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  font-size: 17px;
+  height: 35px;
+  color: #304697;
+  font-family: "camelbold";
+  src: url("/assets/fonts/camel/camel-bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  padding: 3px;
+}
+.width-screen{
+  width: 100%;
+}
+.txt-prop{
+  margin-left: 10.5vh;
+    white-space: nowrap;
+    font-family: "camelbold";
+    margin-top: -15vh;
+}
+.txt-prop-two{
+  margin-left: 1vh;
+    white-space: nowrap;
+    font-family: "camelbold";
+    margin-top: -15vh;
+}
+.txt-prop-three{
+  margin-left: 2vh;
+    white-space: nowrap;
+    font-family: "camelbold";
+    margin-top: -15vh;
+}
+.txt-prop-3{
+  white-space: nowrap;
+  font-family: "camelbold";
+  margin-top: -15vh;
+  margin-left: 4vh;
+}
+.txt-prop-2{
+    white-space: nowrap;
+    font-family: "camelbold";
+    margin-left: 5vh;
+    margin-top: -15vh;
+}
+.text-size{
+  font-size: 2.68rem;
+    line-height: 1;
+}
+.text-size-m{
+  font-size: 2.19rem;
+    line-height: 1;
+}
+.text-size-two{
+  font-size: 2.7rem;
+    line-height: 1;
+}
+.text-size-three{
+  font-size: 2.5rem;
+    line-height: 1;
+}
+.place{
+  margin-top: 35vh;
+}
+.peinture{
+  margin-left: 20%;
+}
+.echecs{
+  margin-left: 25%;
+}
+.icon-first{
+  width: 45%;
+    margin-left: 10vh;
+    margin-top: -50px;
+}
+.icon-scd{
+  width: 40%;
+    margin-left: 16vh;
+    margin-top: 33vh;
+}
+.change{
+  margin-top: 20vh;
+  margin-left: 43%;
+  position: absolute;
+  font-family: "camelbold";background: linear-gradient(to right, #ED8B00 50%, #00A3E0 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.absolument{
+  font-size: 2rem;
+  line-height: 1;
+
+  
+  width: 50%;
+}
+
+.icon-s{
+  width: 45%;
+  margin-left: 18vh;
+  margin-top: 38vh;
+}
+.txt-place{
+  white-space: nowrap;
+  font-size: 3rem;
+  line-height: 1;
+}
+.pasdutout{
+  margin-left: 10vh;
+  white-space: nowrap;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+.problem{
+  margin-left: 10vh;
+  white-space: nowrap;
+  font-size: 3.5rem;
+  margin-top: 35vh;
+  line-height: 1;
+}.mettre{
+  overflow: visible;
+  margin-left: 27vh;
+}
+.change4{
+      margin-top: 8vh;
+    margin-left: 30%;
+    position: absolute;
+    font-family: "camelbold";
+    background: linear-gradient(to right, #D8005E 45%,#FEDD00 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.change5{
+  margin-top: 8vh;
+  margin-left:22%;
+  position: absolute;
+  font-family: "camelbold";
+  background: linear-gradient(to right, #00A3E0 49%,#D8005E 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.change6{
+  margin-top: 8vh;
+  margin-left: 13%;
+  position: absolute;
+  font-family: "camelbold";
+  background: linear-gradient(to right, #D8005E 54%,#FEDD00 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.change7{
+  margin-top: 8vh;
+  margin-left: 4%;
+  position: absolute;
+  font-family: "camelbold";
+  background: linear-gradient(to right, #ED8B00 54%,#FEDD00 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.change2{
+  margin-top: 20vh;
+  margin-left: 27%;
+  position: absolute;
+  font-family: "camelbold";
+  background: linear-gradient(to right, #FEDD00 50%,#ED8B00 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.explore{
+  margin-left: 17vh;
+  margin-top:33vh;
+}
+.change3{
+  margin-top: 20vh;
+  margin-left: 20%;
+  position: absolute;
+  font-family: "camelbold";
+  background: linear-gradient(to right, #ED8B00 30%,#FEDD00 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-size-f {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.txt-prop-4 {
+  white-space: nowrap;
+  font-family: "camelbold";
+  margin-top: -15vh;
+  margin-left: 7vh;
+}
+.txt-prop-f {
+  margin-left: 11vh;
+  white-space: nowrap;
+  font-family: "camelbold";
+  margin-top: -15vh;
+}
+.icon-f{
+  width: 40%;
+  margin-left: 22vh;
+  margin-top: -7vh;
+}
+.icon-ff{
+  width: 60%;
+  margin-left: 75px;
+  margin-top: 38vh;
+}
+.text-size-matiere{
+  font-size: 2rem;
+  line-height: 1;
+}
+.icon-mode{
+  width: 55%;
+  margin-top: 47vh;
+  margin-left: 8vh;
+}
+.img{
+  width: 45%;
+  margin-left: 12vh;
+}
+.margin-l{
+  margin-left: 11rem;
+}
+.margin-r{
+  margin-right: 7vh;
+}
+.margin-left{
+ white-space: nowrap;
+}
+.text-7xl{
+  font-size: 3.8rem;
+  line-height: 1;
+}
+.attitude{
+  font-family: "dk_drop_dead_gorgeous";
+}
+.color{
+  color: #00A3E0;
+}
+.box{
+  position: absolute;
+    border-radius: 25px;
+    background-color: #FEDD00;
+    -webkit-box-shadow: -7px -12px 20px 0px #fff, 25px 27px 34px -29px #000000; 
+    box-shadow: -7px -12px 20px 0px #fff, 25px 27px 34px -29px #000000;
+    font-size: 19px;
+    color: #003C71;
+    font-family: "camelbold";
+    src: url(/assets/fonts/camel/camel-bold.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    padding: 20px;
+    width: 13%;
+}
+.lets{
+  bottom: 2rem;
+  right: 3.5rem;
+}

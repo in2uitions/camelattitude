@@ -11,20 +11,20 @@ import Link from 'next/link'
 
 export default function Home() {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col fixed">
             <div className="grow">
                 <div className="flex flex-row overflow-hidden">
-                    <div className="flex flex-row height-screen overflow-hidden">
-                        <div className="relative flex flex-row height-screen w-screen">
+                    <div className="flex flex-row h-screen overflow-hidden">
+                        <div className="relative flex flex-row h-screen w-screen">
                             <div className="basis-1/2 bg-camel-yellow">
-                                <div className="basis-full height-screen bg-camel-yellow -skew-x-12"></div>
+                                <div className="basis-full h-screen bg-camel-yellow -skew-x-12"></div>
                             </div>
                             <div className="basis-1/2 bg-camel-blue">
-                                <div className="basis-full height-screen bg-camel-blue -skew-x-12"></div>
+                                <div className="basis-full h-screen bg-camel-blue -skew-x-12"></div>
                             </div>
                             
-                            <div className="absolute grid place-content-center w-screen height-screen">
-                                {/* <img src="assets/img/splash-yellow-blue.svg" className="splash height-screen"/> */}
+                            <div className="absolute grid place-content-center w-screen h-screen">
+                                {/* <img src="assets/img/splash-yellow-blue.svg" className="splash h-screen"/> */}
                                 <motion.img
                                     src="assets/images/splash-yellow-blue-3.svg"
                                     className="height-screen"
@@ -38,12 +38,12 @@ export default function Home() {
                             </div>
                         </div>
                     
-                        <div className="absolute flex flex-row height-screen w-screen">
+                        <div className="absolute flex flex-row h-screen w-screen">
                             <div className="basis-1/2">
                                 <div>
-                                    <h1 className="mt-6 ml-6 text-6xl text-camel-blue">MERCI<br />POUR VOTRE</h1>
-                                    <h2 className="margin-top attitude ml-6 text-7xl text-camel-darkblue transform -rotate-12 -translate-y-20">PARTICIPATION</h2>
-                                    <img src="assets/images/attitude.svg" className="img" />
+                                    <h1 className="mt-6 ml-6 text-5xl text-camel-blue">MERCI<br />POUR VOTRE</h1>
+                                    <h2 className="margin-top-last attitude ml-6 text-7xl text-camel-darkblue transform -rotate-12 -translate-y-20">PARTICIPATION</h2>
+                                    <img src="assets/images/attitude.svg" className="thankyou-icon" />
                                 </div>
                         <div className="category-item flex flex-wrap content-end">
                         <Link href="/">
@@ -54,8 +54,8 @@ export default function Home() {
                                         </div>
                             </div>
                             <div className="basis-1/2 flex flex-wrap content-end">
-                                {/* <span class="absolute right-0 bottom-0">sdfsfsd</span> */}
-                                    <img src="assets/images/lets-camel.svg" className="absolute h-1/6 right-20 bottom-10" />
+                                {/* <span className="absolute right-0 bottom-0">sdfsfsd</span> */}
+                                    <img src="assets/images/lets-camel.svg" className="absolute h-1/6 right-20 lets" />
 
                             </div>
                         </div>
@@ -63,7 +63,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="flex-none h-14">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
+            <div className="flex-none w-screen h-14">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
             </div>
         </div>
     )

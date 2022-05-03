@@ -1,0 +1,13 @@
+{
+  "/_app": "pages/_app.js",
+  "/answers[0]": "pages/answers[0].html",
+  "/answers[1]": "pages/answers[1].html",
+  "/color": "pages/color.html",
+  "/": "pages/index.html",
+  "/question": "pages/question.html",
+  "/smoker": "pages/smoker.html",
+  "/thankyou": "pages/thankyou.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
