@@ -21,13 +21,13 @@ export default function Home() {
     const router = useRouter()
     const validationSchema = Yup.object().shape({
         name: Yup.string()
-            .required('Nom is required'),
+            .required('Nom est obligatoire'),
         phone: Yup.string()
-            .required('Tel is required'),
+            .required('Tel est obligatoire'),
         email: Yup.string()
-            .required('Email is required')
-            .email('Email is invalid'),
-        age: Yup.string().required('must be 18 years old'),
+            .required('Email est obligatoire')
+            .email('Email est non valable'),
+        age: Yup.string().required('doint etre 18 ans'),
 
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
