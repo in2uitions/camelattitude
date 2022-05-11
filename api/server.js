@@ -42,10 +42,12 @@ export const createsmoker = async (data) => {
    // var zIdToUse = localStorage.getItem('zId');
     var zQstToUse = localStorage.getItem('zQst');
     var zAnsToUse = localStorage.getItem('zAns');
+    var zBIDToUse = localStorage.getItem('zBID');
     var zNameToUse = localStorage.getItem('zName');
     var zAgeToUse = localStorage.getItem('zAge');
     var zGenderToUse = localStorage.getItem('zGender');
-    var zEmailToUse = localStorage.getItem('zEmail');
+    var zRegionToUse = localStorage.getItem('zRegion');
+    var zWilayaToUse = localStorage.getItem('zWilaya');
     var zIsSmokerToUse = localStorage.getItem('zIsSmoker');
     var zPhoneToUse = localStorage.getItem('zPhone'); 
     var zColToUse = localStorage.getItem('zCol');
@@ -53,10 +55,12 @@ export const createsmoker = async (data) => {
 console.log(zIsSmokerToUse);
 console.log(zGenderToUse);
     const annoncesPublished = await smokers.createOne({
+        ba_id: zBIDToUse,
         name: zNameToUse,
         age: zAgeToUse,
         gender: zGenderToUse,
-        email: zEmailToUse,
+        region: zRegionToUse,
+        wilaya: zWilayaToUse,
         is_smoker: zIsSmokerToUse,
         phone: zPhoneToUse,
         selected_question: zQstToUse,

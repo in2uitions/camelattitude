@@ -20,13 +20,14 @@ import { createsmoker } from '../api/server'
 export default function Home() {
     const router = useRouter()
     const validationSchema = Yup.object().shape({
+        ba_id: Yup.string()
+        .required('BA ID est obligatoire'),
         name: Yup.string()
             .required('Nom est obligatoire'),
-        phone: Yup.string()
-            .required('Tel est obligatoire'),
-        email: Yup.string()
-            .required('Email est obligatoire')
-            .email('Email est non valable'),
+        region: Yup.string()
+            .required('Région est obligatoire'),
+            wilaya: Yup.string()
+            .required('Wilaya est obligatoire'),
         age: Yup.string().required('doit etre 18 ans'),
 
     });
@@ -39,10 +40,12 @@ export default function Home() {
             const result = await validationSchema.validate(value)
             if (result) {
                 const cameluser = 1;// = await createsmoker(value)
+                localStorage.setItem('zBID', value.ba_id);
                 localStorage.setItem('zName', value.name);
                 localStorage.setItem('zAge', value.age);
                 localStorage.setItem('zGender', value.is_gnd);
-                localStorage.setItem('zEmail', value.email);
+                localStorage.setItem('zRegion', value.region);
+                localStorage.setItem('zWilaya', value.wilaya);
                 localStorage.setItem('zIsSmoker', value.is_smoker);
                 localStorage.setItem('zPhone', value.phone);
 
@@ -92,23 +95,27 @@ export default function Home() {
                                 <div className="basis-1/2">
                                     <div className="page-contact-inner">
                                         <div className="mt-10 text-white container mx-auto">
-                                            <div className="flex-items">
+                                        <div className='flex flex-row mt-10'>
+                                        <div className="flex flex-col  ml-10">
+                                                <label className="label-text">BA ID</label>
+                                                <input className='input-text' type="text" {...register('ba_id', { required: { value: true, message: "Nom is required" } })} />
+                                                <span className="text-red-400 text-sm">{errors?.ba_id?.message}</span>
+                                            </div>
+                                            <div className="flex flex-col">
                                                 <label className="label-text">Nom</label>
                                                 <input className='input-text' type="text" {...register('name', { required: { value: true, message: "Nom is required" } })} />
                                                 <span className="text-red-400 text-sm">{errors?.name?.message}</span>
                                             </div>
-                                            <div className="mt-10">
-                                                <div className="flex-items">
-                                                    <label className="label-text ">AGE*</label>
-                                                    <div className='flex-labels'>
-                                                        <input className='input-txt' type="text" {...register('age', { required: { value: true, message: "Nom is required" } })} />
-                                                        <span className="text-red-400 text-sm">{errors?.age?.message}</span>
-                                                        <label className='txt-p'>*SI 18 + ON CONTINUE AVEC LE JEU</label>
-                                                    </div>
-                                                </div>
                                             </div>
                                             <div className="mt-10">
+                                            <div className='flex flex-row'>
                                                 <div className="flex-radioitems ml-10">
+                                                    <label className="label-text ">AGE*</label>
+                                                        <input className='input-text' type="text" {...register('age', { required: { value: true, message: "Nom is required" } })} />
+                                                        <span className="text-red-400 text-sm">{errors?.age?.message}</span>
+                                                        <label className='txt-p'>*SI 18 + ON CONTINUE AVEC LE JEU</label>
+                                                </div>
+                                                <div className="flex flex-col">
                                                     <label className="label-text ">sexe</label>
                                                     <form className="boxed">
                                                         <input type="radio" id="female-gender" {...register('is_gnd')} name="is_gnd" value="female" />
@@ -118,22 +125,31 @@ export default function Home() {
                                                         <label className='radio-label' htmlFor="male-gender">H</label>
                                                     </form>
                                                 </div>
-                                                <div><span className="text-red-400 text-sm">{errors?.is_gnd?.message}</span></div>
+                                                
+                                                </div>
                                             </div>
                                             <div className="mt-10 ml-10">
+                                            <div className='flex flex-row'>
                                                 <div className="flex-radioitems">
-                                                    <label className="label-text ">Addresse Electronique</label>
-                                                    <input className='input-text' type="text" {...register('email', {
-                                                        required: { value: true, message: "Email is required" },
-                                                        pattern: { value: "^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$", message: "Invalid emailaddress format" }
+                                                    <label className="label-text ">Région</label>
+                                                    <input className='input-text' type="text" {...register('region', {
+                                                        required: { value: true, message: "Région est obligatoire" }
                                                     })} />
-                                                    <span className="text-red-400 text-sm">{errors?.email?.message}</span></div>
+                                                    <span className="text-red-400 text-sm">{errors?.region?.message}</span></div>
+                                                    <div className="flex-radioitems">
+                                                    <label className="label-text ">Wilaya</label>
+                                                    <input className='input-text' type="text" {...register('wilaya', {
+                                                        required: { value: true, message: "Wilaya est obligatoire" }
+                                                    })} />
+                                                    <span className="text-red-400 text-sm">{errors?.wilaya?.message}</span></div>
+                                                    </div>
                                             </div>
-                                            <div className="mt-10 ml-10">
-                                                <div className="flex-radioitems">
+                                            <div className="mt-10 ">
+                                                <div className="flex flex-col ml-10">
+                                                <div className='flex-labels'>
                                                     <label className="label-text ">Numero de tel</label>
-                                                    <input className='input-text' type="text" {...register('phone', { required: { value: true, message: "Numéro de portable is required" } })} />
-                                                    <span className="text-red-400 text-sm">{errors?.phone?.message}</span></div>
+                                                    <input className='input-txt' type="text" {...register('phone')} /></div>
+                                                    </div>
                                             </div>
 
                                             <div className="mt-10">
@@ -153,16 +169,21 @@ export default function Home() {
                                                             </div>
                                                         </label>
                                                     </div>
-                                                    <p className='p-form'> *Les informations recueillies dans le cadre de ce jeu ne seront<br></br> collectées que pour les besoins du jeu Camel Attitude, aucune<br></br> information fournie par vous dans le cadre de ce jeu ne sera<br></br> utilisée à d'autres fins que celle relatives à la participation au jeu<br></br> et aucune information vous concernant ou ayant un lien avec la<br></br> participation au jeu Camel Attitude ne sera conservée, archivée<br></br> sur quelque support que ce soit ou transmise à un tiers que ce<br></br> soitsur le territoire algérien ou à l'étranger.
-
-                                                        Nous portons<br></br> également à votre connaissance que les résultats fournis aux<br></br> participants au jeu sont à caractère purement divertissant et ne<br></br> reposent sur aucune base scientifique.</p>
                                                 </div>
                                             </div>
 
                                         </div>
+                                        <div className=''>
+<p className='p-form ml-10'> *Les informations recueillies dans le cadre de ce jeu ne seront collectées que pour les besoins du jeu Camel Attitude,<br></br> aucune informationfournie par vous dans le cadre de ce jeu ne sera utilisée à d'autres fins que celle relatives à la<br></br> participation au jeu et aucune information vous concernant ou ayant un lien avec la participation au jeu Camel Attitude<br></br> ne sera conservée, archivée sur quelque support que ce soit ou transmise à un tiers que ce soit sur le territoire algérien<br></br> ou à l'étranger.
+
+Nous portons également à votre connaissance que les résultats fournis aux participants au jeu sont à<br></br> caractère purement divertissant et ne reposent sur aucune base scientifique.</p>
+</div>
                                     </div>
+                                    
                                 </div>
+                                
                                 <div className="basis-1/2 flex flex-wrap content-end">
+                                
                                     <a onClick={() => { onSubmitForm() }}>
                                         <input type="image" className="absolute h-1/6 right-20 bottom-10 lets" src="assets/images/lets-camel.svg" />
                                     </a>

@@ -82,7 +82,7 @@ export default function Orange() {
                                         src={`${image_url}${item.lighter}`}
                                         className="h-4/6 rotate-12"
                                         initial={{ x: 100, y: -1000, rotate: 0 }}
-                                        animate={{ x: 200, y: 50, rotate: 0 }}
+                                        animate={{ x: 250, y: 100, rotate: 0 }}
                                         transition={{
                                             type: "spring",
                                             duration: 0.5,

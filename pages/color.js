@@ -110,7 +110,6 @@ if (i==imageindedx){
                             </div>
 
                             <div className="basis-1/2 flex flex-wrap content-end">
-                                {/* <span className="absolute right-0 bottom-0">sdfsfsd</span> */}
                                 <div onClick={() => { randomBatikh() }}>
                                     <img src="assets/images/lets-camel.svg" id="" className="absolute h-1/6 right-20 lets" />
                                 </div>
