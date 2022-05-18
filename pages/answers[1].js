@@ -133,7 +133,7 @@ export default function Orange() {
 
                 </div>
             </div>
-            <div className="flex-none w-screen h-14">
+            <div className="flex-none w-screen">
                 FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
             </div>
         </div>

@@ -143,13 +143,13 @@ export default function PageFive() {
                                             {/* <h2 className=" text-6xl">{item.id}</h2> */}
                                             <div className=" flex flex-row  w-screen">
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { randomB();  localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer); localStorage.setItem('zCol', item.answers[0].color); localStorage.setItem('zAtt', item.answers[0].attitude); }}>
+                                                    <div onClick={() => { randomB();  localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[0].answer); localStorage.setItem('zCol', item.answers[0].color_selected); localStorage.setItem('zAtt', item.answers[0].attitude); }}>
                                                         <h3 className=" place absolument echecs text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[0].answer}</h3>
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="icon" />
                                                 </div>
                                                 <div className="basis-1/2 ">
-                                                    <div onClick={() => { randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[1].answer); localStorage.setItem('zCol', item.answers[1].color); localStorage.setItem('zAtt', item.answers[1].attitude); }}>
+                                                    <div onClick={() => { randomans(); localStorage.setItem('zQst', item.id); localStorage.setItem('zAns', item.answers[1].answer); localStorage.setItem('zCol', item.answers[1].color_selected); localStorage.setItem('zAtt', item.answers[1].attitude); }}>
                                                         <h3 className="place mettre absolument text-camel-darkblue transform -rotate-12 -translate-y-20">{item.answers[1].answer}</h3>
                                                     </div>
                                                     <img src="assets/images/attitude.svg" className="h-1/6 icon-f" />
@@ -172,7 +172,7 @@ export default function PageFive() {
                         ))}
                     </div>
                 </div>
-                <div className="flex-none w-screen h-14">
+                <div className="flex-none w-screen">
                     FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
                 </div>
             </div>

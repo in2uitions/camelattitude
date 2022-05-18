@@ -78,7 +78,7 @@ export default function Home() {
                   <img src="assets/images/lets-camel.svg" className="absolute h-1/6 right-20 lets" />
                 </a>
               </div>
-              <div className="flex-none w-screen h-14">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
+              <div className="flex-none w-screen">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
               </div>
             </div>
 

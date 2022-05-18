@@ -63,7 +63,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="flex-none w-screen h-14">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
+            <div className="flex-none w-screen">FUMER NUIT À VOTRE ENTOURAGE التدخين يضر بمحيطكم
             </div>
         </div>
     )
